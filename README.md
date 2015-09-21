@@ -14,17 +14,15 @@ const eventPublisher = new EventPublisher();
 
 // Subscribe all events
 eventPublisher.subscribe((event) => {
-  ...
+  console.log(event); //=> { bar: 'baz', type: 'foo' }
 });
 
 // Subscribe foo events
 eventPublisher.on('foo', (event) => {
-  ...
+  console.log(event); //=> { bar: 'baz', type: 'foo' }
 });
 
-eventPublisher.publish('foo');
-eventPublisher.publish('bar');
-eventPublisher.publish('baz', { boo });
+eventPublisher.publish('foo', { bar: 'baz' });
 ```
 
 ### Import
